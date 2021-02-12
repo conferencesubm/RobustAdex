@@ -67,69 +67,72 @@ git clone https://github.com/conferencesubm/RobustAdex.git
 cd RobustAdex
 git checkout geometric
 git clone https://github.com/eth-sri/eran.git
-cp * eran/
+cp *.txt eran/
+cp *.sh eran/
+cp *.patch eran/
+cp -r nets/ eran/
 cd eran/
 ./install_server.sh 
 ```
 To run the geometric 3D Rotation experiments on MNIST convSmall call the ***3d\_convSmall\_rotation.sh*** script as follows:
 ```
 cd tf_verify/
-./3d_convSmall_rotation.sh
+../3d_convSmall_rotation.sh
 ```
 To run the geometric 3D Rotation experiments on MNIST convBig call the ***3d\_convBig\_rotation.sh*** script as follows:
 ```
 cd tf_verify/
-./3d_convBig_rotation.sh
+../3d_convBig_rotation.sh
 ```
 To run the geometric 3D Rotation experiments on CIFAR10 convSmall call the ***3d\_cifar\_rotation.sh*** script as follows:
 ```
 cd tf_verify/
-./3d_cifar_rotation.sh
+../3d_cifar_rotation.sh
 ```
 To run the geometric 3D Translation experiments on MNIST convSmall call the ***3d\_convSmall\_translation.sh*** script as follows:
 ```
 cd tf_verify/
-./3d_convSmall_translation.sh
+../3d_convSmall_translation.sh
 ```
 To run the geometric 3D Translation experiments on MNIST convBig call the ***3d\_convBig\_translation.sh*** script as follows:
 ```
 cd tf_verify/
-./3d_convBig_translation.sh
+../3d_convBig_translation.sh
 ```
 To run the geometric 3D Translation experiments on CIFAR10 convSmall call the ***3d\_cifar\_translation.sh*** script as follows:
 ```
 cd tf_verify/
-./3d_cifar_translation.sh
+../3d_cifar_translation.sh
 ```
 To run the geometric 4D Rotation experiments on MNIST convSmall call the ***3d\_convSmall\_translation.sh*** script as follows:
 ```
 cd tf_verify/
-./4d_convSmall_rotation.sh
+../4d_convSmall_rotation.sh
 ```
 To run the geometric 4D Rotation experiments on MNIST convBig call the ***3d\_convBig\_translation.sh*** script as follows:
 ```
 cd tf_verify/
-./4d_convBig_rotation.sh
+../4d_convBig_rotation.sh
 ```
 To run the geometric 4D Rotation experiments on CIFAR10 convSmall call the ***3d\_cifar\_translation.sh*** script as follows:
 ```
 cd tf_verify/
-./4d_cifar_rotation.sh
+../4d_cifar_rotation.sh
 ```
 The output of the experiments above will appear under ***tf\_verify/TransformationName\_NetworkName\_0\_100.txt***.
 
 To run the c value comparison experiment execute the following:
 ```
 cd tf_verify/
-./3d_convBig_translation.sh
-./3d_convBig_translation_075.sh
-./3d_convBig_translation_085.sh
+../3d_convBig_translation.sh
+../3d_convBig_translation_075.sh
+../3d_convBig_translation_085.sh
 ```
 The output of the experiments above will appear under ***tf\_verify/3d\_translation\_convBig\_0\_100\_0.75.txt*** and ***tf\_verify/3d\_translation\_convBig\_0\_100\_0.85.txt***.
 
 To run the EoT experiment execute the following:
 ```
 cd tf_verify/
-./3d_convBig_rotation_EoT.sh
+../3d_convBig_rotation_EoT.sh
 ```
 The output of the experiments above will appear under ***tf\_verify/3d\_rotation\_convBig\_0\_100\_eot.txt***
