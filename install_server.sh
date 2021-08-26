@@ -109,14 +109,6 @@ make
 make install
 cd ..
 
-git clone https://github.com/eth-sri/deepg.git
-cd deepg/code
-mkdir build
-make shared_object
-cp ./build/libgeometric.so ${GEOMETRIC_HOME_BIN}/lib
-cd ../..
-
-
 pip install -r requirements.txt
 
 mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d

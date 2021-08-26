@@ -1,5 +1,9 @@
 import sys
 import os
+
+ALL_cpus = list( os.sched_getaffinity(0) )
+os.sched_setaffinity(0,[ALL_cpus[0]])
+
 sys.path.insert(0, '../../ELINA/python_interface/')
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import re, itertools
@@ -136,11 +140,10 @@ def denormalize(image, dataset, means, stds, is_conv):
         assert False
 
 def create_pool( seed, netname, dataset, img, model ):
-    ncpus = os.sysconf("SC_NPROCESSORS_ONLN")
     conns = []
     procs = []
     parent_pid = os.getpid()
-    for cpu in range( ncpus ):
+    for cpu in ALL_cpus:
         parent_conn, child_conn = Pipe()
         conns.append( parent_conn )
         threadseed = None
